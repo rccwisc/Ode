@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <environment include="Development">
+        <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.css"
+              asp-fallback-href="~/node_modules/bootstrap/dist/css/bootstrap.css"
+              asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute"
+              integrity="sha384-/Q7ctZ70waEBDSxNg1G3DP39fQFgLDEU1yhh9O0yQB9JVehvmFMkiXsyE/aY4c37"
+              crossorigin="anonymous">
+    </environment>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">OdeToFood</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @RenderBody()
+        <footer>
+            @RenderSection("footer", required: false)
+            @*await Component.InvokeAsync("Greeter")*@
+            @*<vc:greeter></vc:greeter>*@
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/node_modules/jquery/dist/jquery.js"></script>
+        <script src="~/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+    </environment>
+
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/node_modules/jquery/dist/jquery.js"
+                asp-fallback-test="window.JQuery"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+                crossorigin="anonymous">
+        </script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"
+                asp-fallback-src="~/node_modules/jquery-validation/dist/jquery.validate.js"
+                asp-fallback-test="window.JQuery && window.JQuery.validator"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+                crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"
+                asp-fallback-src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"
+                asp-fallback-test="window.JQuery && window.JQuery.validator && window.JQuery.validator.unobtrusive"
+                integrity="sha384-mq7cJ2/0DBBpfwa9Ta1iT5TPlKf/YcfHkgfM9fpaAt1j8Lo2s1TM6UgIKB9+nfAS" 
+                crossorigin="anonymous">
+        </script>
+    </environment>
+
+</body>
+</html>
